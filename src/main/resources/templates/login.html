@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>CCL-Photo</title>
+        <link rel="Shortcut Icon" href="icon/all.png"/>
+        <!-- Meta tag Keywords -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="keywords" content="CCL-Photo">
+        <meta name="description" content="。">
+        <link rel="stylesheet" href="css/style1.css" type="text/css" media="all"/> <!-- Style-CSS -->
+        <link rel="stylesheet" href="css/layer.css"> <!-- Font-Awesome-Icons-CSS -->
+
+        <!-- js -->
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/jquery.vide.min.js"></script>
+
+        <style>
+            .title, h6 {
+                font-family: "黑体";
+            }
+
+            .layui-layer-title {
+                padding-right: 305px;
+                font-family: "Microsoft Yahei"
+            }
+
+            .layui-layer-dialog .layui-layer-content {
+                font-family: "Microsoft Yahei"
+            }
+
+            .layui-layer-btn {
+                font-family: "Microsoft Yahei"
+            }
+
+            span.icon1 {
+                top: 23%;
+            }
+
+            span.icon2 {
+                top: 42%;
+            }
+
+            #wait {
+                text-align: left;
+                color: #ffffff;
+                margin: 0;
+                font-family: "黑体";
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- main -->
+        <div data-vide-bg="video/Ipad">
+            <div class="center-container">
+                <!--header-->
+                <div class="header-w3l">
+                    <h1>Photo<span class="title">-你的照片</span></h1>
+                </div>
+                <!--//header-->
+                <div class="main-content-agile">
+                    <div class="sub-main-w3">
+                        <div class="wthree-pro">
+                            <h2>Login Here</h2>
+                        </div>
+                        <form  action="index" method="post" width="100%">
+                            <input placeholder="用户名" name="username" id="username" class="user" type="text" required="">
+                            <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span><br><br>
+                            <input placeholder="密码" name="password" id="password" class="pass" type="password"
+                                   required="">
+                            <span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span><br><br>
+
+                            <div id="captcha">
+                            </div>
+
+                            <div class="sub-w3l">
+                                <h6 style="cursor: pointer;">欢迎体验</h6>
+                                <h6 id="errorMsg" style="cursor: pointer;display: none;color: red" th:text="${msg}"></h6>
+                                <div class="right-w3l">
+                                    <input type="submit" class="submit" value="登录"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--//main-->
+
+                <!--footer-->
+                <div class="footer">
+                    <p>&copy; 2019 Photo. All rights reserved | Design by <a href="#" target="_blank">YouTH</a></p>
+                </div>
+                <!--//footer-->
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                if($("#errorMsg")!=null){
+                    $("#errorMsg").show();
+                }
+            })
+        </script>
+    </body>
+</html>
